@@ -1,0 +1,6 @@
+@LibraryApiLinux_HostAddress = http://localhost:5191
+
+GET {{LibraryApiLinux_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

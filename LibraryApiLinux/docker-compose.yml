@@ -1,0 +1,6 @@
+﻿services:
+  cnetprojectapi:
+    image: libraryapilinux
+    build:
+      context: .
+      dockerfile: LibraryApiLinux/Dockerfile
