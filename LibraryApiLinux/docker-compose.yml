@@ -1,6 +1,29 @@
 ﻿services:
+  # Your API service
   cnetprojectapi:
     image: libraryapilinux
+    networks: 
+      - book-app
     build:
       context: .
-      dockerfile: LibraryApiLinux/Dockerfile
+      dockerfile: Dockerfile
+    ports:
+    - "8080:8080" 
+
+
+  # MySQL service
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: book_db
+      MYSQL_USER: webapi_user
+      MYSQL_PASSWORD: password
+    networks:
+      - book-app
+    ports:
+      - "3306:3306" 
+
+networks:
+  book-app:
+    driver: bridge

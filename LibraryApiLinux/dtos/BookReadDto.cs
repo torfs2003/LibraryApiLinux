@@ -1,6 +1,6 @@
-﻿namespace LibraryApiLinux.Models
+﻿namespace LibraryApiLinux.dtos
 {
-    public class Book
+    public class BookReadDto
     {
         public int Id { get; set; }
 
@@ -14,11 +14,11 @@
 
         public int? Stock { get; set; }
 
-        public bool IsAvailable { get; set; } = true;
-        public bool IsInCart { get; set; } = false;
+        public bool IsAvailable { get; set; }
+
+        public bool IsInCart { get; set; }
 
         public DateTime? DueDate { get; set; }
 
     }
 }
-
